@@ -7,9 +7,9 @@
 		"ios": "2.2081"
 	},
 	"version": "v3.2.0",
-	"id": "basu.input-buffer",
-	"name": "Click Before Frames",
-	"developer": "BASU",
+	"id": "Cat",
+	"name": "Cat",
+	"developer": "NAT",
 	"description": "Trajectory-based input buffer: delays early clicks/releases by up to 8+ frames, with orb, pad and portal-aware prediction. github.com/raresdalas1009/-predictive-input-buffer",
 	"settings": {
 		"custom-ticks": {

@@ -869,7 +869,7 @@ namespace {
         // hidden in practice mode (practice runs can't be submitted, and on phones it sat on the
         // checkpoint buttons); always shown in normal mode while the buffer is on
         auto* layer = GameManager::get()->m_playLayer;
-        buf.watermark->setVisible(buf.enabled && !(layer && layer->m_isPracticeMode));
+        buf.watermark->setVisible(false);
         buf.watermark->setString(fmt::format("CBF  |  {}", stageText()).c_str());
     }
 
@@ -880,7 +880,7 @@ namespace {
         auto* layer = GameManager::get()->m_playLayer;
         bool on = buf.enabled && buf.autoNormalRuns && (buf.autoRelease || buf.robotAutoRelease || buf.dashAutoRelease || buf.autoClick) &&
             layer && !layer->m_isPracticeMode;
-        buf.autoTag->setVisible(on);
+        buf.autoTag->setVisible(false);
     }
 
     size_t memorySpots();
@@ -6909,8 +6909,8 @@ namespace online {
         autoplay.takeOver = Mod::get()->getSavedValue<bool>("autoplay-takeover", false);
         // the label stays the whole time autoplay is on (also while you play with Take Over),
         // so a recording always shows the run wasn't played by hand
-        autoplay.tag = CCLabelBMFont::create(autoplay.takeOver ? "AUTOPLAY - TAKE OVER" : "AUTOPLAY", "bigFont.fnt");
-        // v3.0.1: the label always shows (viewers have to be able to tell it isn't a real run), but
+        autoplay.tag = CCLabelBMFont::create("", "bigFont.fnt");
+bi    // v3.0.1: the label always shows (viewers have to be able to tell it isn't a real run), but
         // it can be small, in the bottom corner, for showcases
         if (Mod::get()->getSettingValue<std::string>("autoplay-label") == "Small") {
             autoplay.tag->setScale(0.32f);

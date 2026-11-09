@@ -6910,7 +6910,7 @@ namespace online {
         // the label stays the whole time autoplay is on (also while you play with Take Over),
         // so a recording always shows the run wasn't played by hand
         autoplay.tag = CCLabelBMFont::create("", "bigFont.fnt");
-bi    // v3.0.1: the label always shows (viewers have to be able to tell it isn't a real run), but
+    // v3.0.1: the label always shows (viewers have to be able to tell it isn't a real run), but
         // it can be small, in the bottom corner, for showcases
         if (Mod::get()->getSettingValue<std::string>("autoplay-label") == "Small") {
             autoplay.tag->setScale(0.32f);
